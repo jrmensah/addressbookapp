@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"/>
+</head>
+<body>
+<a href="/add">Add a Person</a><br/>
+<table>
+    <tr>
+        <th>Name</th>
+        <br/>
+        <th>Email Address</th>
+        <br/>
+        <th>Phone Number</th>
+
+    </tr>
+    <tr th:each="person : ${person}">
+        <td th:text="${person.name}"></td>
+        <br/>
+        <td th:text="${person.email}"></td>
+        <br/>
+        <td th:text="${person.phoneNum}"></td>
+        <br/>
+        <td>Actions
+            <a th:href="@{/update/{id} (id=${person.id})}">Update</a>-
+            <a th:href="@{/detail/{id} (id=${person.id})}">Details</a>-
+            <a th:href="@{/delete/{id} (id=${person.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

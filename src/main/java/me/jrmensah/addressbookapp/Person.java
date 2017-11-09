@@ -1,6 +1,8 @@
 package me.jrmensah.addressbookapp;
 
 
+import org.hibernate.validator.constraints.Email;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,20 +17,18 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @NotNull
-    @Size(min=2, message = "Please enter more than 2 characters")
+
+    @Size(min=2, message = "Please enter at least {min} characters")
     private String name;
 
     @NotNull
-    @Size(min=4, message = "Please enter a valid email address")
+    @Email(message = "Please enter a valid email address")
     private String email;
 
     @NotNull
-    @Size(min=3, max=10, message= "Please enter only numbers")
-    private int phoneNumber;
+    @Size(min=3, max=10, message= "Please enter phone number")
+    private String phoneNum;
 
-    public Person() {
-    }
 
     public long getId() {
         return id;
@@ -54,11 +54,11 @@ public class Person {
         this.email = email;
     }
 
-    public int getPhoneNumber() {
-        return phoneNumber;
+    public String getPhoneNum() {
+        return phoneNum;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
     }
 }
