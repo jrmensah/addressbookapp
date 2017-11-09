@@ -13,7 +13,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"/>
 </head>
 <body>
-    <a href="/">Show All Persons</a><br/>
+<div class="container">
+    <ul class="nav navbar-nav navbar-left">
+        <li><a href="bookform.html">Add a Person</a> </li>
+        <li><a href="show.html">Show All Persons</a></li>
+        <li><a href="show.html">Delete Person</a></li>
+    </ul>
+</div>
+    <a href="/">Show all Persons</a><br/>
     Name:<span th:text="${person.name}"></span><br/>
     Email Address:<span th:text="${person.email}"></span><br/>
     Phone Number:<span th:text="${person.phoneNum}"></span><br/>

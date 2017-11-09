@@ -13,7 +13,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"/>
 </head>
 <body>
-<a href="/add">Add a Person</a><br/>
+<div class="container">
+    <ul class="nav navbar-nav navbar-left">
+        <li><a href="/add">Add a Person</a> </li>
+        <li><a>Show All Persons</a></li>
+        <li><a href="/detail/{id}">Delete Person</a></li>
+    </ul>
+</div>
+
 <table>
     <tr>
         <th>Name</th>
