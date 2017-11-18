@@ -6,6 +6,8 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 
+    <!-- This is the embedded stylesheet. It contains css that alters the default styles in the navbar-inverse class, and also addsclasses such as shrikhand  and standardimage -->
+    <link rel="stylesheet" href="css/style.css"/>
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
 
@@ -13,6 +15,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"/>
 </head>
 <body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">Your Address Book</a>
+        </div>
 <div class="container">
     <ul class="nav navbar-nav navbar-left">
         <li><a>Add a Person</a> </li>
@@ -27,25 +35,27 @@
               th:object="${person}"
               method="post">
             <input type="hidden" th:field="*{id}" />
-                <div class="container">
-                    Name:<input type="text" th:field="*{name}" />
-                    <span th:if="${#fields.hasErrors('name')}"
-                          th:errors="*{name}"></span>
-                    <br/>
-                    Email Address:<input type="text" th:field="*{email}" />
-                    <span th:if="${#fields.hasErrors('email')}"
-                          th:errors="*{email}"></span>
-                    <br/>
-                    Phone Number:<input type="text" th:field="*{phoneNum}" />
-                    <span th:if="${#fields.hasErrors('phoneNum')}"
-                          th:errors="*{phoneNum}"></span>
-                    <br/>
+            <div class="container">
+                Name:<input type="text" th:field="*{name}" />
+                <span th:if="${#fields.hasErrors('name')}"
+                      th:errors="*{name}"></span>
+                <br/>
+                Email Address:<input type="text" th:field="*{email}" />
+                <span th:if="${#fields.hasErrors('email')}"
+                      th:errors="*{email}"></span>
+                <br/>
+                Phone Number:<input type="text" th:field="*{phoneNum}" />
+                <span th:if="${#fields.hasErrors('phoneNum')}"
+                      th:errors="*{phoneNum}"></span>
+                <br/>
 
-                    <input type="submit" value="Submit" />
-                </div>
+                <input type="submit" value="Submit" />
+            </div>
         </form>
 
     </div>
 </div>
+    </div>
+</nav>
 </body>
 </html>

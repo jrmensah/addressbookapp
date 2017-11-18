@@ -20,10 +20,10 @@
         <li><a href="show.html">Delete Person</a></li>
     </ul>
 </div>
-    <a href="/">Show all Persons</a><br/>
-    Name:<span th:text="${person.name}"></span><br/>
-    Email Address:<span th:text="${person.email}"></span><br/>
-    Phone Number:<span th:text="${person.phoneNum}"></span><br/>
-    <a th:href="@{/delete/{id}(id=${person.id})}"> Delete this person</a>
+<a href="/">Show all Persons</a><br/>
+Name:<span th:text="${person.name}"></span><br/>
+Email Address:<span th:text="${person.email}"></span><br/>
+Phone Number:<span th:text="${person.phoneNum}"></span><br/>
+<a th:href="@{/delete/{id}(id=${person.id})}"> Delete this person</a>
 </body>
 </html>

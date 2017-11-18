@@ -34,14 +34,14 @@ public class MainController {
         if(result.hasErrors()){
             return "bookform";
         }
-            personRepository.save(person);
-            return "redirect:/";
+        personRepository.save(person);
+        return "redirect:/";
 
     }
     @RequestMapping("/detail/{id}")
     public String showPerson(@PathVariable("id") long id, Model model){
-    model.addAttribute("person", personRepository.findOne(id));
-    return "show";
+        model.addAttribute("person", personRepository.findOne(id));
+        return "show";
     }
     @RequestMapping("/update/{id}")
     public String updatePerson(@PathVariable("id") long id, Model model){
@@ -54,4 +54,3 @@ public class MainController {
         return "redirect:/";
     }
 }
-
